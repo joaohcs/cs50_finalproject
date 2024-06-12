@@ -20,18 +20,31 @@ The Final Project consists of an automated Cohort Analysis, a common process mad
 The application structure is as presented in the tree below:
 
 cs50_finalproject/
+
 ├── README.md
+
 ├── app.py
+
 ├── processing.py
+
 ├── static/
+
 │    ├── vc_img_1.png # A Robot/Venture Capitalist for index.html style
+
 │    ├── retention-graph-example.png # An example of retention matrix for this README.md
+
 │    └── retention_heatmap.png # The resul figure of a processed spreadsheet
+
 ├── templates/
+
 │    ├── index.html # Homepage
+
 │    └── results.html # Display the results (Figure + LLM Analysis)
+
 └── uploads/
+
      ├── file1.csv # Example of file processed
+
      └── file2.csv # Example of file processed
 
 `processing.py` contains the script that processes the spreadsheet given by the user. It receives the spreadsheet and returns both the figure (Plotted Retention Matrix) and a LLM analysis of the retention matrix. The function process_csv() calls all functions defined in processing.py to make this possible. `app.py` imports the function process_csv() from `processing.py` to use it in a route of the Flask App.
