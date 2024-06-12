@@ -45,6 +45,7 @@ This function receives a file, identifies the file extension (.csv, .xls, .xslm.
 The raw spreadsheet for a cohort analysis is normally formatted in two columns, one being the date of an interaction (ex. customer buying, clicking, broker selling) and a second one with a unique ID. The function format_data() receives the Pandas Dataframe from load_data(), identifies which column is which, create new columns for cohorts identification and for period_time (date of that event - cohort date, so we can identify where to place that data in the retention matrix). Finally, it calculates cohort sizes, and pivot the columns so they look like a retention matrix (example below)
 
 ![Example Img](static/retention-graph-example.png)
+
 Source: https://blog.atinternet.com/en/app-analytics-how-to-read-a-retention-graph/
 
 #### plot_graphs()
