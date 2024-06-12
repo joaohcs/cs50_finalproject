@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f4f4f9;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        h1, h2 {
+            color: #343a40;
+        }
+        .result-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .result-item {
+            flex: 1 1 48%;
+            margin-bottom: 20px;
+            margin: 5px 5px 5px 5px;
+        }
+        .result-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .result-item pre {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+            max-height: 500px;
+            overflow-y: auto;
+            white-space: pre-wrap; /* Enables word wrap */
+            word-wrap: break-word; /* Ensures long words break correctly */
+        }
+        /* For WebKit browsers */
+        .result-item pre::-webkit-scrollbar {
+            width: 8px;
+        }
+        .result-item pre::-webkit-scrollbar-track {
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        .result-item pre::-webkit-scrollbar-thumb {
+            background-color: #8e9397;
+            border-radius: 10px;
+            border: 6px solid #f8f9fa;
+        }
+        .btn-custom {
+            background-color: #6c757d;
+            border-color: #6c757d;
+            color: white;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            transition: all 0.3s ease; /* Smooth transition for hover effects */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            text-decoration: none;
+        }
+        .btn-custom:hover {
+            background-color: #5a6268;
+            border-color: #545b62;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Slightly larger shadow on hover */
+            transform: translateY(-2px); /* Slight lift effect on hover */
+        }
+        .btn-custom:focus, .btn-custom:active {
+            background-color: #545b62;
+            border-color: #4e555b;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Consistent shadow on focus/active */
+            transform: none; /* No lift effect on focus/active */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="text-center">Analysis Results</h1>
+            <a href="/" class="btn btn-custom">Go Back</a>
+        </div>
+        <div class="result-container">
+            <div class="result-item">
+                <h2>Retention Matrix:</h2>
+                <img src="{{ url_for('static', filename='retention_heatmap.png') }}" width="750" height=auto alt="Retention Heatmap" class="img-fluid">
+            </div>
+            <div class="result-item">
+                <h2>LLM Interpretation:</h2>
+                <pre>{{ llm_response }}</pre>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
