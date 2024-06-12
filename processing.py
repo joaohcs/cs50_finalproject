@@ -20,7 +20,6 @@ from langchain_core.prompts import PromptTemplate
 import openai
 import os
 from dotenv import load_dotenv
-import base64
 
 ## API Configuration for LLM Usage
 load_dotenv('secrets.env')
@@ -182,7 +181,7 @@ def llm_analysis(retention_matrix, prompt):
         # Convert retention matrix to a string
     retention_matrix_str = retention_matrix.to_string()
 
-    # Initialize OpenAI with your API key
+    # Initializing OpenAI with API key
     llm = OpenAI(api_key=OPENAI_API_KEY, max_tokens=-1)
 
     # Create the prompt
