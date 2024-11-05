@@ -1,5 +1,5 @@
 # Automated Cohort Analysis for Venture Capitalists and Startups - CS50 Harvard Final Project
-#### Video demo: URL
+#### Video demo: [URL](https://www.youtube.com/watch?v=V_goFSxDgho)
 
 # Description
 
